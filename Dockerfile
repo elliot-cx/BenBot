@@ -8,5 +8,6 @@ RUN pip install openai
 RUN pip install dotenv 
 
 ENV KEY=
+ENV TOKEN=
 
 CMD [ "python", "./main.py" ]
