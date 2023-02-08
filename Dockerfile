@@ -1,6 +1,6 @@
 FROM python:3
 
-ADD main.py /
+COPY . .
 
 RUN pip install pystrich
 RUN pip install discord

@@ -2,9 +2,9 @@ import discord
 import os
 import json
 import openai
-from dotenv import load_dotenv, find_dotenv
+# from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(find_dotenv())
+# load_dotenv(find_dotenv())
 # Load your API key from an environment variable or secret management service
 openai.api_key = os.getenv("KEY")
  
