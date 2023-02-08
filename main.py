@@ -53,7 +53,7 @@ async def on_message(message):
         #     if expression in response:
         #         return await message.channel.send(expressions[expression])
 
-        await message.channel.send_typing()
+        await message.channel.typing()
         try:
             response = openai.Completion.create(model="text-davinci-003", prompt=content, temperature=0, max_tokens=300)
             response = response["choices"][0]["text"]
