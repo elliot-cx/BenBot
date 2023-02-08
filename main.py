@@ -53,10 +53,13 @@ async def on_message(message):
         #     if expression in response:
         #         return await message.channel.send(expressions[expression])
 
-
-
-        response = openai.Completion.create(model="text-davinci-003", prompt=content, temperature=0, max_tokens=300)
-        response = response["choices"][0]["text"]
-        await message.channel.send(response)
+        await message.channel.send_typing()
+        try:
+            response = openai.Completion.create(model="text-davinci-003", prompt=content, temperature=0, max_tokens=300)
+            response = response["choices"][0]["text"]
+            await message.channel.send(response)
+        except:
+            await message.channel.send("Désolé une erreure est survenue")
+        
         
 client.run(os.getenv("TOKEN"))
